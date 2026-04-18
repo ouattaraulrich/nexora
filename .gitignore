@@ -1,0 +1,31 @@
+# .gitignore — Nexora Service Marketplace
+
+# --- Environnement local ---
+.env
+.env.local
+.env.*.local
+
+# --- Uploads utilisateurs (ne pas versionner) ---
+uploads/
+
+# --- Logs ---
+*.log
+logs/
+
+# --- IDE & OS ---
+.idea/
+.vscode/
+*.DS_Store
+Thumbs.db
+
+# --- PHP ---
+vendor/
+composer.lock
+
+# --- Archives ---
+*.zip
+*.tar.gz
+
+# --- Dossier cache ---
+cache/
+tmp/

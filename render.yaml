@@ -1,0 +1,42 @@
+services:
+  - type: web
+    name: nexora-php
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    branch: main
+    autoDeploy: true
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_NAME
+        value: Nexora
+      - key: APP_URL
+        fromService:
+          type: web
+          name: nexora-php
+          property: host
+      - key: DB_HOST
+        fromDatabase:
+          name: nexora-db
+          property: host
+      - key: DB_NAME
+        fromDatabase:
+          name: nexora-db
+          property: database
+      - key: DB_USER
+        fromDatabase:
+          name: nexora-db
+          property: user
+      - key: DB_PASS
+        fromDatabase:
+          name: nexora-db
+          property: password
+      - key: OPENAI_API_KEY
+        sync: false   # À saisir manuellement dans le dashboard Render
+
+databases:
+  - name: nexora-db
+    plan: free
+    databaseName: service_db
+    user: nexora_user
