@@ -1,0 +1,15 @@
+.git
+.github
+.env
+.env.local
+node_modules
+vendor
+uploads/*
+database/database.sql
+*.zip
+*.tar.gz
+.vscode
+.idea
+Dockerfile
+railway.json
+render.yaml
