@@ -6,6 +6,8 @@
   },
   "deploy": {
     "startCommand": "apache2-foreground",
+    "healthcheckPath": "/index1.php",
+    "healthcheckTimeout": 60,
     "restartPolicyType": "ON_FAILURE",
     "restartPolicyMaxRetries": 3
   }
